@@ -1,6 +1,6 @@
-forEach: Entity
-fileName: pom.xml
-path: gateway
+forEach: 
+fileName: 
+path: 
 ifDuplicated: merge
 ---
 <?xml version="1.0" encoding="UTF-8"?>
