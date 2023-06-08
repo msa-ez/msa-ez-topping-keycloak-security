@@ -1,3 +1,6 @@
+fileName: pom.xml
+forEach: Model
+path: for-model/gateway
 ifDuplicated: merge
 ---
 <?xml version="1.0" encoding="UTF-8"?>
