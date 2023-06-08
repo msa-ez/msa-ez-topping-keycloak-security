@@ -1,6 +1,6 @@
+forEach: BoundedContext
 fileName: pom.xml
-forEach: Model
-path: {{#replaceName name}}{{/replaceName}}
+path: {{name}}/.
 ifDuplicated: merge
 ---
 <?xml version="1.0" encoding="UTF-8"?>
