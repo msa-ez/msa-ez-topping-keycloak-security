@@ -1,4 +1,4 @@
-ifDuplicated: "merge"
+ifDuplicated: merge
 ---
 server:
   port: 8088
