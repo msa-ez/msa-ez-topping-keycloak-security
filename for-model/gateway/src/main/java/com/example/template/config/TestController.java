@@ -1,6 +1,3 @@
-path: /src/main/java/{{options.package}}
----
-
 package com.example.template.config;
 
 import org.springframework.http.ResponseEntity;
