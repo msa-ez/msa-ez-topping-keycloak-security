@@ -132,14 +132,14 @@ client-sercret: Client Tab > 생성한 Client Click > Credentials Tab에서 secr
 redirect-uri: Gateway Endpoint URL + /login/oauth2/code/ + ClientId
 
 # Setting frontend - src - main.js
-Line 67
+```
 let initOptions = {
   url: 'http://localhost:9090/*' or 'https://9090-<gitpod주소>'
   realm: `master`,
   clientId: `client-id`,
   onLoad: `login-required`,
 };
-    
+```
     
     
 ### Keycloak yaml
