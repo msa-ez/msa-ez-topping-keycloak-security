@@ -1,3 +1,5 @@
+path: /src/main/java/{{options.package}}/controller
+---
 package com.example.template.config;
 
 import org.springframework.http.ResponseEntity;
