@@ -30,7 +30,7 @@ services:
       - start-dev
 ```
 cd keycloak
-docker compose up
+docker compose up -d
 (keycloak port = 9090)
 ```
     
@@ -77,18 +77,17 @@ Open http://localhost:9090/ or https://9090-<gitpod주소> in your web browser.
 
 # 2. Keycloak Setting
 #step1. admin 접속
-'http://localhost:9090/' or 'https://9090-<gitpod주소>' 접속 > admin 계정 생성. (docker compose up 했을 경우, admin user 생성되어 있음.)
+'http://localhost:9090/' or 'https://9090-<gitpod주소>' 접속 > admin 계정 생성. 
+(docker compose up 했을 경우, admin user 생성되어 있음 -> ID:admin / PW:admin)
 
 #step2. Clients setting
 1. Client create >  client-id
 
 2. Move to Setting Tab
-    - Access Type : public
-    - Root URL : 'http://localhost:9090/*' or 'https://9090-<gitpod주소>/*'
-    - Valid Redirect URIs : 'http://localhost:8088/*' or 'https://8088-<gitpod주소>/*' (gateway 주소)
-    - Web Origins : '*'
+    - Access Type : Confidential
+    - Valid Redirect URIs: Gateway Endpoint URL + /login/oauth2/code/ + ClientId
 
-3. Role setting
+- Client Role
 Client tab - 새롭게 생성한 Client click
 상단 Roles tab - Add Role - Modeling에서 사용한 Actor와 동일한 이름으로 Role 추가 (대소문자 주의)
 
@@ -97,14 +96,20 @@ Users Tab
 1. add User > 정보 입력 > 저장
 2. 'view all users' 클릭
 3. user id 클릭 > Credentials > password 설정 (temporary Off)
-4. Role Mappings > Client Roles > 생성한 Client 선택 > 해당 User에 부여할 Role(Actor) 선택 > Add Seleted
+4. Role Mappings > Client Roles or Realm Roles 에서 선택하여 mapping
 
 # 3. Gateway Setting
-1. gateway >  application.yml
+1. gateway >  application.yml 예시
 
-Insert application.yaml
 ````yaml
-spring:
+keycloak-client:
+  server-url: https://9090-uengineysw-shoptestkeyc-atpshpaoszu.ws-us99.gitpod.io
+  realm: master
+````
+keycloak-client.server-url: Key1cloak port end point
+keycloak-client.realm: Realm name
+
+````yaml
   security:
     oauth2:
       client:
@@ -114,15 +119,18 @@ spring:
             user-name-attribute: preferred_username
         registration:
           keycloak:
-            client-id: ${client-id}
-            client-secret: 
-            redirect-uri: "gateway-path/login/oauth2/code/client-name"
+            client-id: 12stmall
+            client-secret: mCJK2sodEkXQWzRtMtPYZHIwgvZxFnwy
+            redirect-uri: https://8088-uengineysw-shoptestkeyc-atpshpaoszu.ws-us99.gitpod.io/login/oauth2/code/12stmall
             authorization-grant-type: authorization_code
             scope: openid
       resourceserver:
         jwt:
           jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 ````
+clinet-id: keycloak client ID
+client-sercret: Client Tab > 생성한 Client Click > Credentials Tab에서 secret 확인
+redirect-uri: Gateway Endpoint URL + /login/oauth2/code/ + ClientId
 
 # 5. Setting frontend - src - main.js
 Line 67
