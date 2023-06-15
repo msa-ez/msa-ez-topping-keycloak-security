@@ -1,6 +1,6 @@
 path: /src/main/java/{{options.package}}/controller
 ---
-package com.example.template.config;
+package {{options.package}}.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
