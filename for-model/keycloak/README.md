@@ -37,52 +37,52 @@ docker compose up -d
 ```
     
 ## Local 설치형 - Download Keycloak
-- Linux/Unix
+- Linux/Unix & Windows
 ```
-$ wget https://github.com/keycloak/keycloak/releases/download/17.0.1/keycloak-17.0.1.zip
+$ curl -LO https://github.com/keycloak/keycloak/releases/download/18.0.1/keycloak-18.0.1.zip
 ```
 
-- Windows
+- Linux/Unix
 ```
-% https://github.com/keycloak/keycloak/releases/download/17.0.1/keycloak-17.0.1.zip.sha
+$ wget https://github.com/keycloak/keycloak/releases/download/18.0.1/keycloak-18.0.1.zip
 ```
-다운로드후 파일 업로드
+
 
 ## Unpack keycloak zip
 Unpack the ZIP file using the appropriate unzip utility, such as unzip, tar, or Expand-Archive.
-```yaml
-$ unzip keycloak-17.0.1.zip
+```
+$ unzip keycloak-18.0.1.zip
 or
-$ tar -zxvf keycloak-17.0.1.tar.gz
+$ tar -zxvf keycloak-18.0.1.zip
 ```
 
 ## Starting
 If you want to make DockerImage, you move Dockerfile to /keycloak-17.0.1 folder.
-```yaml
-$ cd keycloak-17.0.1/bin
+```
+$ cd keycloak-18.0.1/bin
 ```
 
 - Linux/Unix
 ```
 $ sh kc.sh start-dev --http-port=9090 
     or
-  chmod +x kc.sh
+$ chmod +x kc.sh
 $ ./kc.sh start-dev --proxy=edge --http-port=9090
 ```
 
 - Windows
 ```
-$ \bin\kc.bat start-dev --http-port=9090
+$ kc.bat start-dev --http-port=9090
 ```
 
 
-Open http://localhost:9090/ or https://9090-<gitpod주소> in your web browser.
+Open http://localhost:9090/ or https://9090-<Gitpod Endpoint> in your web browser.
 
 
 # 2. Keycloak Setting
 ## admin 접속
-'http://localhost:9090/' or 'https://9090-<gitpod주소>' 접속 > admin 계정 생성. 
-(docker compose up 했을 경우, admin user 생성되어 있음 -> ID:admin / PW:admin)
+'http://localhost:9090/' or 'https://9090-<Gitpod Endpoint>' 접속 > admin 계정 생성. 
+(docker compose up -d -> admin user 생성되어 있음 -> ID:admin / PW:admin)
 
 ## Clients setting
 1. Client create >  client-id
