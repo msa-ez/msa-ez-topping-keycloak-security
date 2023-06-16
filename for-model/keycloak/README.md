@@ -57,12 +57,12 @@ $ tar -zxvf keycloak-18.0.1.zip
 ```
 
 ## Starting
-If you want to make DockerImage, you move Dockerfile to /keycloak-17.0.1 folder.
+If you want to make DockerImage, you move Dockerfile to /keycloak-18.0.1 folder.
 ```
 $ cd keycloak-18.0.1/bin
 ```
 
-- Linux/Unix
+### Linux/Unix
 ```
 $ sudo apt-get update
 $ sudo apt install openjdk-18-jdk #자바가 설치되어 있지 않다면 Install
@@ -74,7 +74,7 @@ $ sudo -E bin/kc.sh start-dev
 ```
 - Admin User를 생성할 필요 없이, ID=admin / PW=admin 
 
-- Windows
+### Windows
 ```
 $ kc.bat start-dev --http-port=9090
 ```
