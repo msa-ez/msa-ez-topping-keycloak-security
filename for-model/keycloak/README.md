@@ -110,8 +110,8 @@ keycloak-client:
   server-url: https://9090-uengineysw-shoptestkeyc-atpshpaoszu.ws-us99.gitpod.io
   realm: master
 ````
-keycloak-client.server-url: Key1cloak port end point
-keycloak-client.realm: Realm name
+- keycloak-client.server-url: Key1cloak port end point
+- keycloak-client.realm: Realm name
 
 ````yaml
   security:
@@ -132,9 +132,9 @@ keycloak-client.realm: Realm name
         jwt:
           jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 ````
-clinet-id: keycloak client ID
-client-sercret: Client Tab > 생성한 Client Click > Credentials Tab에서 secret 확인
-redirect-uri: Gateway Endpoint URL + /login/oauth2/code/ + ClientId
+- clinet-id: keycloak client ID
+- client-sercret: Client Tab > 생성한 Client Click > Credentials Tab에서 secret 확인
+- redirect-uri: Gateway Endpoint URL + /login/oauth2/code/ + ClientId
 
 # 4. Setting frontend - src - main.js
 ```
