@@ -64,16 +64,21 @@ $ cd keycloak-18.0.1/bin
 
 - Linux/Unix
 ```
-$ sh kc.sh start-dev --http-port=9090 
-    or
-$ chmod +x kc.sh
-$ ./kc.sh start-dev --proxy=edge --http-port=9090
+$ sudo apt-get update
+$ sudo apt install openjdk-18-jdk #자바가 설치되어 있지 않다면 Install
+
+$ export KEYCLOAK_ADMIN=admin
+$ export KEYCLOAK_ADMIN_PASSWORD=admin
+
+$ sudo -E bin/kc.sh start-dev
 ```
+- Admin User를 생성할 필요 없이, ID=admin / PW=admin 
 
 - Windows
 ```
 $ kc.bat start-dev --http-port=9090
 ```
+- Admin User를 생성해줘야함.
 
 
 Open http://localhost:9090/ or https://9090-<Gitpod Endpoint> in your web browser.
