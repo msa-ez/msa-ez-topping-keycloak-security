@@ -9,7 +9,8 @@
 
 
 # Started Keycloak
-## keycloak <docker-compose.yml>
+## keycloak <docker-compose.yml
+```
 version: '3.8'
 
 services:  
@@ -27,6 +28,8 @@ services:
       KC_PROXY: edge
     command:
       - start-dev
+```
+
 ```
 cd keycloak
 docker compose up -d
