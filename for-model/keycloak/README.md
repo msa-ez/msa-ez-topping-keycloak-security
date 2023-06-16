@@ -8,7 +8,7 @@
 4. Setting Frontend
 
 
-# Started Keycloak
+# 1. Started Keycloak
 ## Keycloak Docker 환경 <docker-compose.yml>
 ```
 version: '3.8'
@@ -36,26 +36,27 @@ docker compose up -d
 (keycloak port = 9090)
 ```
     
-## Local - Download Archive
-# 1. Download Keycloak
+## Local 설치형 - Download Keycloak
 - Linux/Unix
-```yaml
+```
 $ wget https://github.com/keycloak/keycloak/releases/download/17.0.1/keycloak-17.0.1.zip
 ```
+
 - Windows
-```text
-https://github.com/keycloak/keycloak/releases/download/17.0.1/keycloak-17.0.1.zip.sha
+```
+% https://github.com/keycloak/keycloak/releases/download/17.0.1/keycloak-17.0.1.zip.sha
 ```
 다운로드후 파일 업로드
 
-# 2. Installing
+## Unpack keycloak zip
 Unpack the ZIP file using the appropriate unzip utility, such as unzip, tar, or Expand-Archive.
 ```yaml
 $ unzip keycloak-17.0.1.zip
 or
 $ tar -zxvf keycloak-17.0.1.tar.gz
 ```
-# 3. Starting
+
+## Starting
 If you want to make DockerImage, you move Dockerfile to /keycloak-17.0.1 folder.
 ```yaml
 $ cd keycloak-17.0.1/bin
@@ -68,6 +69,7 @@ $ sh kc.sh start-dev --http-port=9090
   chmod +x kc.sh
 $ ./kc.sh start-dev --proxy=edge --http-port=9090
 ```
+
 - Windows
 ```
 $ \bin\kc.bat start-dev --http-port=9090
@@ -77,12 +79,12 @@ $ \bin\kc.bat start-dev --http-port=9090
 Open http://localhost:9090/ or https://9090-<gitpod주소> in your web browser.
 
 
-## Keycloak Setting
-# 1. admin 접속
+# 2. Keycloak Setting
+## admin 접속
 'http://localhost:9090/' or 'https://9090-<gitpod주소>' 접속 > admin 계정 생성. 
 (docker compose up 했을 경우, admin user 생성되어 있음 -> ID:admin / PW:admin)
 
-# 2. Clients setting
+## Clients setting
 1. Client create >  client-id
 
 2. Move to Setting Tab
@@ -93,14 +95,14 @@ Open http://localhost:9090/ or https://9090-<gitpod주소> in your web browser.
 Client tab - 새롭게 생성한 Client click
 상단 Roles tab - Add Role - Modeling에서 사용한 Actor와 동일한 이름으로 Role 추가 (대소문자 주의)
 
-# 3. User register
+## User register
 Users Tab 
 1. add User > 정보 입력 > 저장
 2. 'view all users' 클릭
 3. user id 클릭 > Credentials > password 설정 (temporary Off)
 4. Role Mappings > Client Roles or Realm Roles 에서 선택하여 mapping
 
-## Gateway Setting
+# 3. Gateway Setting
 gateway > application.yml 예시
 
 ````yaml
@@ -134,7 +136,7 @@ clinet-id: keycloak client ID
 client-sercret: Client Tab > 생성한 Client Click > Credentials Tab에서 secret 확인
 redirect-uri: Gateway Endpoint URL + /login/oauth2/code/ + ClientId
 
-# Setting frontend - src - main.js
+# 4. Setting frontend - src - main.js
 ```
 let initOptions = {
   url: 'http://localhost:9090/*' or 'https://9090-<gitpod주소>'
