@@ -106,6 +106,7 @@ Open http://localhost:9090/ or https://9090-<Gitpod Endpoint> in your web browse
 
 
 - Client Role
+
 Client tab - 새롭게 생성한 Client click
 상단 Roles tab - Add Role - Modeling에서 사용한 Actor와 동일한 이름으로 Role 추가 (대소문자 주의)
 
