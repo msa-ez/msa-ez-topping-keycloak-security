@@ -13,8 +13,7 @@ keycloak-client:
   realm: master
 
 spring:
-  profiles:
-    activate: default
+  profiles: default
   cloud:
     gateway:
       default-filters:
