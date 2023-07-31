@@ -93,8 +93,16 @@ Open http://localhost:9090/ or https://9090-<Gitpod Endpoint> in your web browse
 1. Client create >  client-id
 
 2. Move to Setting Tab
+   2-1) Only BackEnd
     - Access Type : Confidential
     - Valid Redirect URIs: Gateway Endpoint URL + /login/oauth2/code/ + ClientId
+
+   2-2) With FrontEnd
+    - Access Type : public
+    - Root URL :  'https://9090-<gitpod주소>/*'
+    - Valid Redirect URIs : 'https://8088-<gitpod주소>/*' (gateway 주소)
+    - Web Origins : '*'
+
 
 - Client Role
 Client tab - 새롭게 생성한 Client click
