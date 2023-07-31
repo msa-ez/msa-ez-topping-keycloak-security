@@ -21,8 +21,9 @@ spring:
     name: {{toLowerCase name}}
 ---
 spring:
-  profiles:
-    activate: default
+  config:
+    activate:
+      on-profile: default
   security:
     oauth2:
       resourceserver:
