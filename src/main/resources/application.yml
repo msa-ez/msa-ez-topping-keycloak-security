@@ -1,7 +1,6 @@
 forEach: BoundedContext
 fileName: application.yml
 path: {{name}}/src/main/resources
-ifDuplicated: merge
 ---
 server:
   port: 8080
