@@ -1,4 +1,6 @@
-package com.example.template.config;
+path: /src/main/java/{{options.package}}
+---
+package {{options.package}};
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
