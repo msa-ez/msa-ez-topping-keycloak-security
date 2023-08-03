@@ -1,4 +1,4 @@
-path: /src/main/java/{{options.package}}
+path: /src/main/java/{{options.package}}/config
 ---
 package {{options.package}};
 
