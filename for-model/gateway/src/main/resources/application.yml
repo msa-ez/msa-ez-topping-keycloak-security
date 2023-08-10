@@ -25,7 +25,7 @@ spring:
         - id: {{name}}
           uri: http://localhost:{{portGenerated}}
           predicates:
-            - Path={{#aggregates}}/{{namePlural}}/** {{/aggregates}} {{#views}}/{{namePlural}}/**{{/views}}
+            - Path={{#aggregates}}/{{namePlural}}/**, {{/aggregates}} {{#views}}/{{namePlural}}/**{{/views}}
         {{/boundedContexts}}
         - id: frontend
           uri: http://localhost:8080
