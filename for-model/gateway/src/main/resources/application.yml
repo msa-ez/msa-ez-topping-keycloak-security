@@ -1,6 +1,7 @@
 fileName: application.yml
 forEach: Model
 path: for-model/gateway/src/main/resources
+ifDuplicated: merge
 ---
 server:
   port: 8088
