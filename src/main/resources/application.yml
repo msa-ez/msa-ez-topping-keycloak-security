@@ -29,6 +29,7 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: http://localhost:9090/realms/master/protocol/openid-connect/certs
+  _key: 'jpa'
   jpa:
     properties:
       hibernate:
