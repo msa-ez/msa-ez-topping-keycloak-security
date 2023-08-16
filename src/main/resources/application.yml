@@ -4,6 +4,7 @@ path: {{name}}/src/main/resources
 ifDuplicated: merge
 ---
 spring:
+  _key: config
   config:
     activate:
       on-profile: default
@@ -63,6 +64,7 @@ server:
 
 ---
 spring:
+  _key: config
   config:
     activate:
       on-profile: docker
