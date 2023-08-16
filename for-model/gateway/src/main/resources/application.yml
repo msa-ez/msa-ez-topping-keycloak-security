@@ -64,23 +64,6 @@ spring:
   config:
     activate:
       on-profile: docker
-  security:
-    oauth2:
-      client:
-        provider:
-          keycloak:
-            issuer-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}
-            user-name-attribute: preferred_username
-        registration:
-          keycloak:
-            client-id: "<client-id>"
-            client-secret: 
-            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
-            authorization-grant-type: authorization_code
-            scope: openid
-      resourceserver:
-        jwt:
-          jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
   cloud:
     gateway:
       routes:
@@ -100,6 +83,23 @@ spring:
             allowedHeaders:
               - "*"
             allowCredentials: true
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: "<client-id>"
+            client-secret: 
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            authorization-grant-type: authorization_code
+            scope: openid
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 
 server:
   port: 8080
