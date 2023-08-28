@@ -3,24 +3,6 @@ fileName: application.yml
 path: {{name}}/src/main/resources
 ifDuplicated: merge
 ---
-server:
-  port: 8080
-{{#circuitBreaker}}
-#<<< Resilency / Circuit Breaker
-feign:
-  hystrix:
-    enabled: true
-hystrix:
-  command:
-    default:
-      execution.isolation.thread.timeoutInMilliseconds: 500
-#>>> Resilency / Circuit Breaker
-{{/circuitBreaker}}
-
-spring:
-  application:
-    name: {{toLowerCase name}}
----
 spring:
   _key: config
   config:
