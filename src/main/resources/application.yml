@@ -3,7 +3,6 @@ fileName: application.yml
 path: {{name}}/src/main/resources
 ---
 spring:
-  _key: config
   config:
     activate:
       on-profile: default
@@ -63,7 +62,6 @@ server:
 
 ---
 spring:
-  _key: config
   config:
     activate:
       on-profile: docker
