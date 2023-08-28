@@ -1,7 +1,6 @@
 fileName: application.yml
 forEach: Model
 path: for-model/gateway/src/main/resources
-ifDuplicated: merge
 ---
 server:
   port: 8088
@@ -13,7 +12,6 @@ keycloak-client:
   realm: master
 
 spring:
-  _key: config
   config:
     activate:
       on-profile: default
@@ -62,7 +60,6 @@ spring:
 
 ---
 spring:
-  _key: config
   config:
     activate:
       on-profile: docker
