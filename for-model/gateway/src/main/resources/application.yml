@@ -3,22 +3,7 @@ forEach: Model
 path: for-model/gateway/src/main/resources
 ---
 server:
-  port: 8080
-{{#circuitBreaker}}
-#<<< Resilency / Circuit Breaker
-feign:
-  hystrix:
-    enabled: true
-hystrix:
-  command:
-    default:
-      execution.isolation.thread.timeoutInMilliseconds: 500
-#>>> Resilency / Circuit Breaker
-{{/circuitBreaker}}
-
-spring:
-  application:
-    name: {{toLowerCase name}}
+  port: 8088
 
 ---
 
