@@ -2,4 +2,4 @@ name: Keycloak security
 rating: 5
 imageUrl: https://github.com/msa-ez/template-axon2/assets/130956306/1a4e6364-d7ef-4639-8a36-8c26e3f5e4e8
 templateName: keycloak-security
-description: Keycloak security description
+description: Effectively manage user authentication and authorization, enhancing security.
