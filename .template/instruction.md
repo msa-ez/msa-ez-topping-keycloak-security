@@ -23,20 +23,20 @@
 #### Multitenancy: Keycloak supports multitenancy which makes it adaptable for scenarios where different realms or configurations are necessary for different sets of users.
 
 ### How to run
-  #### 1. Enter the following commands:
-  ```
-  cd keycloak
-  docker-compose up
-  ```
-  #### 2. Access Keycloak on port 9090 and configure it.
+#### 1. Enter the following commands:
+```
+cd keycloak
+docker-compose up
+```
+#### 2. Access Keycloak on port 9090 and configure it.
 
-  #### 3. Modify the Keycloak settings in application.yml of the gateway.
+#### 3. Modify the Keycloak settings in application.yml of the gateway.
 
-  #### 4. Run the microservice and gateway with the following commands:
-  ```
-  cd <microservice>
-  mvn spring-boot:run
-  
-  cd gateway
-  mvn spring-boot:run
-  ```
+#### 4. Run the microservice and gateway with the following commands:
+```
+cd <microservice>
+mvn spring-boot:run
+
+cd gateway
+mvn spring-boot:run
+```
